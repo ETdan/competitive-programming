@@ -16,6 +16,5 @@ public:
         }
         node->val=node->next->val;
         node->next=NULL;
-        
     }
 };
