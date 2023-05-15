@@ -1,7 +1,5 @@
-
 #include <iostream>
-using namespace std;
- 
+using namespace std; 
 int main()
 {
     int first,second;
@@ -9,6 +7,5 @@ int main()
     first*=second;
     first/=2;
     cout<<first <<endl;
-    
     return 0;
 }
