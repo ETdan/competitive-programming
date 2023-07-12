@@ -11,7 +11,6 @@ vector<string> split(const string &);
  *
  * The function accepts INTEGER_ARRAY a as parameter.
  */
-
 void countSwaps(vector<int> a) {
     int count=0;
     for (int i = 0; i < a.size(); i++) {
