@@ -12,7 +12,7 @@ class Solution {
 public:
     bool isPalindrome(ListNode* head) {
         bool answer= true;
-        vector<int> container; 
+        vector<int> container;
 
         ListNode* holder = head;
 
