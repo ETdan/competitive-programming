@@ -36,9 +36,6 @@ int main()
             cout<< b[k-1]<<endl;
     }
   
-    n=0;
-    k=0;
-    b.clear();
     return 0;
 }
 
