@@ -11,6 +11,5 @@ class Solution(object):
                     word += letter
                 else:
                     word += letter.lower()
-                    
         word_reverse=word[::-1]
         return word == word_reverse
