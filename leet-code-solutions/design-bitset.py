@@ -21,7 +21,6 @@ class Bitset(object):
             self.bit0[idx] = 1
             self.bit1[idx] = 0
             self.count_+=1
-            
 
     def unfix(self, idx):
         """
@@ -29,29 +28,24 @@ class Bitset(object):
         :rtype: None
         """
 
-        # if self.first:
         if self.bit0[idx] == 1:
             self.bit0[idx]=0
             self.bit1[idx]=1
             if self.count_ > 0:
-                self.count_-=1
-            
-        
+                self.count_-=1        
 
     def flip(self):
         """
         :rtype: None
         """
-        # print("fb",self.first)
+
         self.bit0 ,self.bit1 = self.bit1 ,self.bit0
         self.count_= self.n - self.count_
-        # print("fa",self.first)
 
     def all(self):
         """
         :rtype: bool
         """
-        # print(self.first)
 
         if self.count_ == self.n:
             return True
@@ -62,31 +56,23 @@ class Bitset(object):
         """
         :rtype: bool
         """
+
         if self.count_ >0:
             return True
         else:
-            return False
-                
-                
-        
+            return False        
 
     def count(self):
         """
         :rtype: int
         """
-        # print(self.first)
-        # if self.first:
         return self.count_
-        # else:
-            # return self.count_
 
     def toString(self):
         """
         :rtype: str
         """
         return "".join([str(bit) for bit in self.bit0])
-
-        # return "".join([str(bit) for bit in self.bit1])
 
 # Your Bitset object will be instantiated and called as such:
 # obj = Bitset(size)
