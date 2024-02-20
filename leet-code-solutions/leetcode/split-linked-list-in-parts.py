@@ -5,29 +5,33 @@
 #         self.next = next
 class Solution:
     def splitListToParts(self, head: Optional[ListNode], k: int) -> List[Optional[ListNode]]:
-        ans=[]
-        cur=head
-        n=0
-        while cur:
-            n+=1
-            cur=cur.next
+        answer=[]
+        nums=[0]*k
 
-        part,left=n//k,n%k
-        cur=head
-        prev=None
-        for i in range(k):
-            ans.append(cur)
-            for _ in range(part):
-                if cur:
-                    prev=cur
-                    cur=cur.next
+        length=0
+        temp=head
 
-            if left and cur:
-                prev=cur
-                cur=cur.next
-                left-=1
+        while temp:
+            length+=1
+            temp=temp.next
+        
+        i=0
+        while length:
+           nums[i%k]+=1
+           length-=1 
+           i+=1
 
-            if prev:
-                prev.next=None
+        temp=head
 
-        return ans                        
+        for i,num in enumerate(nums):
+            headi=ListNode(0)
+            tempi=headi
+            while num:
+                num-=1
+                tempi.next=temp
+                temp=temp.next
+                tempi=tempi.next
+            tempi.next=None
+            answer.append(headi.next)
+
+        return answer
